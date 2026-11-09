@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Entregable_momento3_DSGL {
 
     public static void main(String[] args) {
-        String[] referencias = {"Chaqueta Cuero Icon", "Jean Slim Fit", "Camiseta Polo Leather", null, null};
+        String[] referencias = { "Chaqueta Cuero Icon", "Jean Slim Fit", "Camiseta Polo Leather", null, null };
         Scanner leer = new Scanner(System.in);
         String opcion;
 
         do {
-            System.out.println("\n CHEVIGNON ");
+            System.out.println("-CHEVIGNON-");
             System.out.println("1. Listar referencias");
             System.out.println("2. Buscar referencia");
             System.out.println("3. Agregar referencia");
@@ -27,7 +27,7 @@ public class Entregable_momento3_DSGL {
                 case "2":
                     System.out.print("Prenda a buscar: ");
                     String buscada = leer.nextLine();
-                    if (nombreFuncion(referencias, buscada)) {
+                    if (buscar(referencias, buscada)) {
                         System.out.println("Existe.");
                     } else {
                         System.out.println("No existe.");
@@ -60,9 +60,9 @@ public class Entregable_momento3_DSGL {
         leer.close();
     }
 
-    static boolean nombreFuncion(String[] arreglo, String nombreBuscado) {
+    static boolean buscar(String[] arreglo, String nombreBuscado) {
         for (int i = 0; i < arreglo.length; i++) {
-            if (arreglo[i] != null && arreglo[i].equals(nombreBuscado)) {
+            if (arreglo[i] != null && arreglo[i].equalsIgnoreCase(nombreBuscado)) {
                 return true;
             }
         }
